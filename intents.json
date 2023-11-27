@@ -3,17 +3,28 @@
     {
       "tag": "greetings",
       "patterns": ["hello", "hey", "hi", "good day", "you alright?", "greetings", " what's up?", "how is it going?"],
-      "responses": ["Hello!", "Hey!", "What can I do for you?"]
+      "responses": ["Hello!", "Hey!", "Hi there!"]
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": ["how are you", "how are you doing", "what's up", "how's it going"],
+      "responses": ["I'm just a computer program, but thanks for asking!", "I'm here and ready to assist you."]
     },
     {
       "tag": "goodbye",
-      "patterns": ["see ya", "cya", "see you later", "I am leaving", "Have a good day", "bye", "cao", "see ya"],
+      "patterns": ["goodbye", "see ya", "cya", "see you later", "I am leaving", "Have a good day", "bye", "cao", "see ya"],
       "responses": ["Have a good day!", "Talk to you later.", "Goodbye!", "Hope I was able to help you:)"]
     },
     {
       "tag": "name",
-      "patterns": ["who are you", "how can I call you", "can you tell me your name", "what's your name"],
-      "responses": ["I am your virtual travel guide!", "I'm your study-buddy-tour-guide", "I'm here to help you if you're stuck in a foreign town"]
+      "patterns": ["how can I call you", "can you tell me your name", "what's your name"],
+      "responses": ["I'm your virtual travel guide!", "I'm your study-buddy-tour-guide", "I'm a bot which loves travelling:)"]
+    },
+    {
+      "tag": "creator",
+      "patterns": ["Who created you?", "Who is your creator?", "Tell me about your creator"],
+      "responses": ["I was created by Kateryna Miniailo.", "My creator is Kateryna Miniailo."
+      ]
     },
     {
       "tag": "teaching",
@@ -36,6 +47,12 @@
       "tag": "small talk",
       "patterns": ["what can I say to locals", "How can I start the conversation", "how to start a small talk", "talk to people", "talk to locals"],
       "responses": ["Starting a conversation is easy! Try saying something like: 'Hi there! What's your favorite thing about this place?'"]
-    }
+    },
+    {
+    "tag": "tell_a_joke",
+    "patterns": ["Tell me a joke", "Say something funny", "Share a joke"],
+    "responses": ["Why don't scientists trust atoms? Because they make up everything!", "Why do programmers prefer dark mode? Because light attracts bugs!",
+      "Why did the computer go to therapy? It had too many bytes of emotional baggage."]
+}
   ]
 }

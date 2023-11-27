@@ -12,7 +12,7 @@ intents = json.loads(open('intents.json').read())
 
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('chatbot_model.model/model.h5')
+model = load_model('chatbot_model/model.h5')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -55,4 +55,9 @@ while True:
     message = input("You: ")
     ints = predict_class(message)
     res = get_response(ints, intents)
-    print("Bot:", res)
+
+    if float(ints[0]['probability']) < 0.8:
+        print("Bot: I'm sorry, I didn't quite understand that.")
+    else:
+        res = get_response(ints, intents)
+        print("Bot:", res)
