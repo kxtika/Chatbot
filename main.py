@@ -7,6 +7,8 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
+import config
+
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
 
@@ -49,15 +51,15 @@ def get_response(intents_list, intents_json):
             break
     return result
 
-print("GO! Bot is running!")
+print(config.STARTING_MESSAGE)
 
 while True:
-    message = input("You: ")
+    message = input(config.USER)
     ints = predict_class(message)
     res = get_response(ints, intents)
 
     if float(ints[0]['probability']) < 0.8:
-        print("Bot: I'm sorry, I didn't quite understand that.")
+        print(config.BOT, config.UNKNOWN_INPUT)
     else:
         res = get_response(ints, intents)
-        print("Bot:", res)
+        print(config.BOT, res)
