@@ -5,8 +5,6 @@ import pickle
 import numpy as np
 
 import nltk
-
-nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 
 import keras
@@ -78,9 +76,7 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-model.fit(train_x, train_y, epochs=200, batch_size=5, verbose=1)
-
-directory_path = 'chatbot_model.model'
+directory_path = 'chatbot_model'
 
 # Check if the directory exists, and if not, create it
 if not os.path.exists(directory_path):
@@ -88,6 +84,8 @@ if not os.path.exists(directory_path):
     print(f"Directory '{directory_path}' created successfully.")
 else:
     print(f"Directory '{directory_path}' already exists.")
+
+hist = model.fit(train_x, train_y, epochs=200, batch_size=5, verbose=1)
 
 # Save the model in the specified directory
 model.save(os.path.join(directory_path, 'model.h5'))
