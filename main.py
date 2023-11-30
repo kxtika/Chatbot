@@ -99,10 +99,20 @@ print(config.STARTING_MESSAGE)
 while True:
     message = input(config.USER)
     ints = predict_class(message)
-    res = get_response(ints, intents)
 
+    # Check if the "goodbye" intent is invoked
+    goodbye_detected = any(intent['intent'] == 'goodbye' for intent in ints)
+
+    # Continue with the usual response handling
     if float(ints[0]['probability']) < 0.7:
         print(config.BOT, config.UNKNOWN_INPUT)
+
+    elif goodbye_detected:
+        # Match "goodbye" tag from ints with "goodbye" from intents
+        goodbye_responses = [intent['responses'] for intent in intents['intents'] if intent['tag'] == 'goodbye']
+        if goodbye_responses:
+            print(config.BOT, random.choice(goodbye_responses[0]))
+        break
     else:
         res = get_response(ints, intents)
         print(config.BOT, res)

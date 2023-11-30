@@ -2,7 +2,7 @@
   "intents": [
     {
       "tag": "greetings",
-      "patterns": ["hello", "hey", "hi", "good day", "you alright?", "greetings", " what's up?", "how is it going?"],
+      "patterns": ["hello", "hey", "hi", "hiya", "good day", "you alright?", "greetings", " what's up?", "how is it going?"],
       "responses": ["Hello!", "Hey!", "Hi there!"]
     },
     {
@@ -28,25 +28,28 @@
     },
     {
       "tag": "teaching",
-      "patterns": ["what can you help me with?", "what can you teach me", "what is the area of your expertise", "what can you do"],
-      "responses": ["I can teach you conversational phrases for travelling", "I can help you to ask for directions, order food at the restaurant and have small talk with locals."]
+      "patterns": ["what can you help me with?", "what can you teach me", "what is the area of your expertise", "what can you do", "what do you do"],
+      "responses": ["I can teach you conversational phrases for travelling or tell you a joke:)", "I can help you to ask for directions, order food at the restaurant and have small talk with locals."]
     },
     {
       "tag": "directions",
       "patterns": ["How can I ask for directions?", "How can I get around town?", "How can I get to ..", "getting around",
         "orienting in a town", "how can I get to the destination point"],
-      "responses": ["Sure, here are a couple of useful phrases for asking directions: 'Excuse me, how can I get to [destination]?'"]
+      "responses": ["Here are a couple of useful phrases for asking directions: 'Excuse me, how can I get to [destination]?'",
+        "If you're lost, you can say: 'Could you please guide me to [location]?'"]
     },
     {
       "tag": "food",
       "patterns": ["How can I order", "how to make an order at the restaurant", "what to say in a cafe", "how can I get food",
         "how to order food"],
-      "responses": ["Certainly! Here are some phrases you can use when ordering food: 'I'd like to order [dish], please.'"]
+      "responses": ["Here are some phrases you can use when ordering food: 'I'd like to order [dish], please.'",
+      "When in a restaurant, you can say: 'Could I have the [dish], please?'"]
     },
     {
       "tag": "small talk",
       "patterns": ["what can I say to locals", "How can I start the conversation", "how to start a small talk", "talk to people", "talk to locals"],
-      "responses": ["Starting a conversation is easy! Try saying something like: 'Hi there! What's your favorite thing about this place?'"]
+      "responses": ["Starting a conversation is easy! Try saying something like: 'Hi there! What's your favorite thing about this place?'",
+        "Engage in small talk by asking: 'Have you lived here long? Any recommendations for places to visit?'"]
     },
     {
     "tag": "tell_a_joke",
